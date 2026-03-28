@@ -1,4 +1,6 @@
 ---
+trigger: always_on
+---
 paths:
   - "src/gameplay/**"
 ---

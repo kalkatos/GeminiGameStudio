@@ -1,4 +1,6 @@
 ---
+trigger: always_on
+---
 paths:
   - "design/narrative/**"
 ---
