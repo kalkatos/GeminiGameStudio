@@ -9,7 +9,7 @@ you'll lose validation features.
 | Tool | Purpose | Install |
 | ---- | ---- | ---- |
 | **Git** | Version control, branch management | [git-scm.com](https://git-scm.com/) |
-| **Gemini CLI or Antigravity** | AI agent CLI | Ask user to install Antigravity |
+| **Antigravity** | IDE | [antigravity.google](https://antigravity.google/) |
 
 ## Recommended
 
@@ -74,4 +74,4 @@ python3 --version      # Should show python version (optional)
 
 ## Recommended IDE
 
-- **Antigravity** or **Gemini CLI**
+- **Antigravity**

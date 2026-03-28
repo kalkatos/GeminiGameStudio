@@ -4,7 +4,7 @@
 >
 > This guide walks you through every phase of game development using the
 > 48-agent system, 37 slash commands, and automated hooks. It assumes you
-> have Gemini CLI or Antigravity installed and are working from the project root.
+> have Antigravity installed and are working from the project root.
 
 ---
 
@@ -33,7 +33,7 @@
 
 Before you start, make sure you have:
 
-- **Gemini** installed and working
+- **Antigravity** installed and working
 - **Git** with Git Bash (Windows) or standard terminal (Mac/Linux)
 - **jq** (optional but recommended -- hooks fall back to `grep` if missing)
 - **Python 3** (optional -- some hooks use it for JSON validation)
@@ -61,7 +61,7 @@ a game concept and engine decision.
 
 ### Step 0.3: Choose Your Engine
 
-Run `/setup-engine` in Gemini CLI or Antigravity. This is the single most important
+Run `/setup-engine` in Antigravity. This is the single most important
 configuration step -- it tells every agent what engine, language, and toolchain
 you're using:
 

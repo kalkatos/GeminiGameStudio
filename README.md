@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">Gemini Game Studios</h1>
+  <h1 align="center">Gemini Game Studio</h1>
   <p align="center">
     Turn a single Gemini session into a full game development studio.
     <br />
@@ -18,11 +18,15 @@
 
 ---
 
+## What is this?
+
+**Gemini Game Studio** is a fork of [Claude Code Game Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) adapted for Antigravity. All the agents, hooks, rules, and templates are the same, but adapted for Google's AI agent capabilities. The only difference is that hooks are not present in Gemini, so their functionality is invoked via a rule in the .agents/rules folder. It does not use Gemini's `workflow` feature as that seems to be targeted for more simple use cases. The slash commands were kept as skills, as those are also available.
+
 ## Why This Exists
 
 Building a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking "does this actually fit the game's vision?"
 
-**Gemini Game Studios** solves this by giving your AI session the structure of a real studio. Instead of one general-purpose assistant, you get 48 specialized agents organized into a studio hierarchy — directors who guard the vision, department leads who own their domains, and specialists who do the hands-on work. Each agent has defined responsibilities, escalation paths, and quality gates.
+**Gemini Game Studio** solves this by giving your AI session the structure of a real studio. Instead of one general-purpose assistant, you get 48 specialized agents organized into a studio hierarchy — directors who guard the vision, department leads who own their domains, and specialists who do the hands-on work. Each agent has defined responsibilities, escalation paths, and quality gates.
 
 The result: you still make every decision, but now you have a team that asks the right questions, catches mistakes early, and keeps your project organized from first brainstorm to launch.
 
@@ -116,7 +120,7 @@ Type `/` in Gemini to access all 37 skills:
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
-- [Gemini CLI](https://geminicli.com/docs/get-started/installation/) or [Antigravity](https://antigravity.google/)
+- [Antigravity](https://antigravity.google/)
 - **Recommended**: [jq](https://jqlang.github.io/jq/) (for hook validation) and Python 3 (for JSON validation)
 
 All hooks fail gracefully if optional tools are missing — nothing breaks, you just lose validation.
@@ -129,10 +133,7 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    cd my-game
    ```
 
-2. **Open Gemini CLI or Antigravity** and start a session:
-   ```bash
-   gemini
-   ```
+2. **Open Antigravity** and start a session using **Fast Mode** and at least **Gemini 3.1 Pro (Low)** model. Gemini 3 Flash is not recommended.
 
 3. **Run `/start`** — the system asks where you are (no idea, vague concept,
    clear design, existing work) and guides you to the right workflow. No assumptions.
@@ -256,8 +257,6 @@ This is a **template**, not a locked framework. Everything is meant to be custom
 Tested on **Windows 10** with Git Bash. All hooks use POSIX-compatible patterns (`grep -E`, not `grep -P`) and include fallbacks for missing tools. Works on macOS and Linux without modification.
 
 ---
-
-*This project is under active development. The agent architecture, skills, and coordination system are solid and usable today — but there's more coming.*
 
 ## License
 
