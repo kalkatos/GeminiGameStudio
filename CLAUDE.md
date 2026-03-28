@@ -1,6 +1,6 @@
-# Claude Code Game Studios -- Game Studio Agent Architecture
+# Gemini Game Studios -- Game Studio Agent Architecture
 
-Indie game development managed through 48 coordinated Claude Code subagents.
+Indie game development managed through 48 coordinated Gemini subagents.
 Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Technology Stack
@@ -16,7 +16,7 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Project Structure
 
-@.claude/docs/directory-structure.md
+@.agents/docs/directory-structure.md
 
 ## Engine Version Reference
 
@@ -24,11 +24,11 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Technical Preferences
 
-@.claude/docs/technical-preferences.md
+@.agents/docs/technical-preferences.md
 
 ## Coordination Rules
 
-@.claude/docs/coordination-rules.md
+@.agents/docs/coordination-rules.md
 
 ## Collaboration Protocol
 
@@ -47,8 +47,8 @@ See `docs/COLLABORATIVE-DESIGN-PRINCIPLE.md` for full protocol and examples.
 
 ## Coding Standards
 
-@.claude/docs/coding-standards.md
+@.agents/docs/coding-standards.md
 
 ## Context Management
 
-@.claude/docs/context-management.md
+@.agents/docs/context-management.md

@@ -1,10 +1,10 @@
-# Claude Code Game Studios -- Complete Workflow Guide
+# Gemini Game Studio -- Complete Workflow Guide
 
 > **How to go from zero to a shipped game using the Agent Architecture.**
 >
 > This guide walks you through every phase of game development using the
 > 48-agent system, 37 slash commands, and automated hooks. It assumes you
-> have Claude Code installed and are working from the project root.
+> have Gemini CLI or Antigravity installed and are working from the project root.
 
 ---
 
@@ -33,7 +33,7 @@
 
 Before you start, make sure you have:
 
-- **Claude Code** installed and working
+- **Gemini** installed and working
 - **Git** with Git Bash (Windows) or standard terminal (Mac/Linux)
 - **jq** (optional but recommended -- hooks fall back to `grep` if missing)
 - **Python 3** (optional -- some hooks use it for JSON validation)
@@ -61,7 +61,7 @@ a game concept and engine decision.
 
 ### Step 0.3: Choose Your Engine
 
-Run `/setup-engine` in Claude Code. This is the single most important
+Run `/setup-engine` in Gemini CLI or Antigravity. This is the single most important
 configuration step -- it tells every agent what engine, language, and toolchain
 you're using:
 
@@ -74,8 +74,8 @@ based on your game's needs (2D/3D, platforms, team size, language preferences).
 
 **What `/setup-engine` does:**
 
-- Pins the engine and version in `CLAUDE.md`
-- Populates `.claude/docs/technical-preferences.md` with naming conventions,
+- Pins the engine and version in `GEMINI.md`
+- Populates `.agents/docs/technical-preferences.md` with naming conventions,
   performance budgets, and engine-specific defaults
 - Detects knowledge gaps (engine version newer than LLM training data) and
   fetches current docs from the web so agents suggest correct APIs
@@ -88,27 +88,27 @@ become your go-to experts. The Unity and Unreal specialists remain available
 but won't be primary.
 
 > **Manual alternative:** You can also edit the Technology Stack section in
-> `CLAUDE.md` directly if you prefer.
+> `GEMINI.md` directly if you prefer.
 
 ### Step 0.3: Verify Hooks Are Working
 
-Start a new Claude Code session. You should see output from the
+Start a new Gemini session. You should see output from the
 `session-start.sh` hook:
 
 ```
-=== Claude Code Game Studios -- Session Context ===
+=== Gemini Game Studio -- Session Context ===
 Branch: main
 Recent commits:
   abc1234 Initial commit
 ===================================
 ```
 
-If you see this, hooks are working. If not, check `.claude/settings.json` to
+If you see this, hooks are working. If not, check `.agents/settings.json` to
 make sure the hook paths are correct for your OS.
 
 ### Step 0.4: Create Your Directory Structure
 
-The directories listed in `CLAUDE.md` don't all exist yet. Create them as
+The directories listed in `GEMINI.md` don't all exist yet. Create them as
 needed -- the system expects this layout:
 
 ```
@@ -210,7 +210,7 @@ Take the brainstorm output and formalize it. Use the **game concept template**:
 
 ```
 Ask Claude to create a game concept document using the template at
-.claude/docs/templates/game-concept.md
+.agents/docs/templates/game-concept.md
 ```
 
 This template includes:
@@ -229,7 +229,7 @@ design values that guide every decision. Use the template:
 
 ```
 Ask Claude to create a game pillars document using the template at
-.claude/docs/templates/game-pillars.md
+.agents/docs/templates/game-pillars.md
 ```
 
 Example pillars:
@@ -290,10 +290,10 @@ Use the template:
 
 ```
 Ask Claude to create a GDD using the template at
-.claude/docs/templates/game-design-document.md
+.agents/docs/templates/game-design-document.md
 ```
 
-**The `design-docs` rule** (`.claude/rules/design-docs.md`) requires every GDD
+**The `design-docs` rule** (`.agents/rules/design-docs.md`) requires every GDD
 to have these 8 sections:
 
 | # | Section | What Goes Here |
@@ -400,7 +400,7 @@ If your game has story, lore, or dialogue, this is when you build it:
 3. **Character sheets** -- Use the `narrative-character-sheet.md` template
    for each major character
 
-The `narrative` rule (`.claude/rules/narrative.md`) enforces:
+The `narrative` rule (`.agents/rules/narrative.md`) enforces:
 - Lore consistency across documents
 - Canon levels (Core Canon vs Flavor vs Apocrypha)
 - Character voice profiles
@@ -475,7 +475,7 @@ Define your project milestones using the template:
 
 ```
 Ask Claude to create a milestone definition using the template at
-.claude/docs/templates/milestone-definition.md
+.agents/docs/templates/milestone-definition.md
 ```
 
 Typical indie milestones:
@@ -552,7 +552,7 @@ User: "Yes"
 Agent: [Creates directory structure, README with hypothesis/criteria/status,
        delegates to prototyper agent for minimal implementation]
 
-**Key rule:** The `prototype-code` rule (`.claude/rules/prototype-code.md`)
+**Key rule:** The `prototype-code` rule (`.agents/rules/prototype-code.md`)
 intentionally relaxes coding standards for prototypes - hardcoded values OK,
 no tests required, but README with hypothesis and findings is mandatory.
 
@@ -650,7 +650,7 @@ Agent: [Creates sprint plan with goal, categorized tasks, 20hr capacity estimate
 Each session follows this pattern:
 
 ```
-1. Start a Claude Code session
+1. Start a Gemini session
    (session-start hook shows branch, sprint status, recent commits)
 
 2. Pick a task from the sprint plan
@@ -1009,7 +1009,7 @@ test-driven development with automated enforcement.
 The project enforces **verification-driven development**: write tests before
 or alongside implementation, not after.
 
-The `test-standards` rule (`.claude/rules/test-standards.md`) enforces:
+The `test-standards` rule (`.agents/rules/test-standards.md`) enforces:
 - Test naming: `test_[system]_[scenario]_[expected_result]`
 - Structure: Arrange / Act / Assert
 - No external state dependencies
@@ -1612,7 +1612,7 @@ After launch dust settles:
 
 ```
 Ask Claude to create a post-mortem using the template at
-.claude/docs/templates/post-mortem.md
+.agents/docs/templates/post-mortem.md
 ```
 
 This covers:
